@@ -2,6 +2,7 @@ package engineTester;
 
 import entities.Camera;
 import entities.Entity;
+import entities.Light;
 import models.TexturedModel;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
@@ -47,7 +48,7 @@ public class MainGameLoop {
         };
 
         //RawModel model = loader.loadToVAO(vertices, textureCoords, indices);
-        RawModel model = OBJLoader.loadOBJModel("stall", loader);
+        RawModel model = OBJLoader.loadOBJModel("dragon", loader);
 
         ModelTexture texture = new ModelTexture(loader.loadTexture("stallTexture"));
         //ModelTexture texture = new ModelTexture(loader.loadTexture("stallTexture"));
@@ -58,13 +59,17 @@ public class MainGameLoop {
         //No tutorial ele junta tuto e da o nome de staticModel = textureModel
 
         Entity entity = new Entity(texturedModel, new Vector3f(0, 0,-50), 0, 0, 0, 1);
+        Light light = new Light(new Vector3f(0, 0, -20), new Vector3f(1, 1, 1));
+
         Camera camera = new Camera();
 
         while (!Display.isCloseRequested()){
             entity.increaseRotation(0, 1, 0);
+            entity.increasePosition(0, 0, 0.02f);
             camera.move();
             renderer.prepare();
             shader.start();
+            shader.loadLight(light);
             shader.loadViewMatrix(camera);
             //renderer.render(textureModel);
             renderer.render(entity, shader);

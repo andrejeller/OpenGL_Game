@@ -24,6 +24,7 @@ public class StaticShader extends ShaderProgram {
     protected void bindAttributes() {
         super.bindAttribute(0, "position");
         super.bindAttribute(1, "textureCoords");
+        super.bindAttribute(2, "normal");
     }
 
     @Override
@@ -31,8 +32,8 @@ public class StaticShader extends ShaderProgram {
         location_transformationMatrix = super.getUniformLocation("transformationMatrix");
         location_projectionMatrix = super.getUniformLocation("projectionMatrix");
         location_viewMatrix = super.getUniformLocation("viewMatrix");
-       // location_lightPosition = super.getUniformLocation("lightPosition");
-     //   location_lightColour = super.getUniformLocation("lightColour");
+        location_lightPosition = super.getUniformLocation("lightPosition");
+        location_lightColour = super.getUniformLocation("lightColour");
     }
 
     public void loadTransformationMatrix(Matrix4f matrix){
