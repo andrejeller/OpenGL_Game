@@ -4,13 +4,6 @@
     <JAVADOC />
     <NATIVE>
       <root url="file://$PROJECT_DIR$/src/libs/native" />
-      <root url="file://$PROJECT_DIR$/src/libs/native" />
-      <root url="file://$PROJECT_DIR$/src/libs/native" />
-      <root url="file://$PROJECT_DIR$/src/libs/native" />
-      <root url="file://$PROJECT_DIR$/src/libs/native" />
-      <root url="file://$PROJECT_DIR$/src/libs/native" />
-      <root url="file://$PROJECT_DIR$/src/libs/native" />
-      <root url="file://$PROJECT_DIR$/src/libs/native" />
     </NATIVE>
     <SOURCES />
   </library>
